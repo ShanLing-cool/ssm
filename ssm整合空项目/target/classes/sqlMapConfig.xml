@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE configuration
+        PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+
+    <!--加载properties文件-->
+    <properties resource="jdbc.properties"/>
+
+    <typeAliases>
+        <!--<typeAlias type="com.zovz.domain.Account" alias="account"/>-->
+
+        <!--扫包，会自动给包下的每一个实体两个别名，Account和account都可以-->
+        <package name="com.zovz.domain"/>
+    </typeAliases>
+
+    <!--    环境-->
+    <environments default="development">
+        <environment id="development">
+            <transactionManager type="JDBC"/>
+            <dataSource type="POOLED">
+                <property name="driver" value="${jdbc.driver}"/>
+                <property name="url" value="${jdbc.url}"/>
+                <property name="username" value="${jdbc.username}"/>
+                <property name="password" value="${jdbc.password}"/>
+            </dataSource>
+        </environment>
+    </environments>
+
+    <!--加载映射-->
+
+    <mappers>
+        <!--<mapper resource="com/zovz/mapper/AccountMapper.xml"/>-->
+        <!--扫包，将包中的映射文件都加在进去-->
+        <package name="com.zovz.mapper"/>
+    </mappers>
+
+</configuration>

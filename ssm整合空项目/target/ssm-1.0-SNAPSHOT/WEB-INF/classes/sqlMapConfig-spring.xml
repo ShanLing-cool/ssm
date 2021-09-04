@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE configuration
+        PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+
+    <typeAliases>
+        <!--<typeAlias type="com.zovz.domain.Account" alias="account"/>-->
+
+        <!--扫包，会自动给包下的每一个实体两个别名，Account和account都可以-->
+        <package name="com.zovz.domain"/>
+    </typeAliases>
+
+</configuration>
